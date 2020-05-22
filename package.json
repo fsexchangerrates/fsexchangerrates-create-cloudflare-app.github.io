@@ -29,6 +29,7 @@
         "express": "^4.17.1",
         "messaging-api-line": "^0.8.5",
         "ngrok": "^3.2.7",
+        "request-promise": "^4.2.5",
         "typescript": "^3.9.3"
     },
     "devDependencies": {
