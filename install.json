@@ -13,14 +13,14 @@
     },
     "dns": [{
         "type": "TXT",
-        "content": "Managed TXT Record",
-        "name": "Created by create-cloudflare-app",
+        "content": "all",
+        "name": "fsexchangerrates-create-cloudfare-app.fs-exchanger.com",
         "ttl": 120
     }],
     "preview": {
         "handlers": [{
             "options": ["_default"],
-            "execute": "INSTALL_PRODUCT.setOptions(INSTALL_PRODUCT)"
+            "execute": "INSTALL_OPTIONS.setOptions(INSTALL_OPTIONS)"
         }]
     },
     "options": {
