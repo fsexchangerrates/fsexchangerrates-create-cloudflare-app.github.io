@@ -10,12 +10,12 @@
     "document": true,
     "window": true,
     "process": true,
-    "fetch": false,
-    "INSTALL": false,
-    "INSTALL_ID": false,
-    "INSTALL_SCOPE": false,
-    "INSTALL_OPTIONS": false,
-    "INSTALL_PRODUCT": false
+    "fetch": true,
+    "INSTALL": true,
+    "INSTALL_ID": true,
+    "INSTALL_SCOPE": true,
+    "INSTALL_OPTIONS": true,
+    "INSTALL_PRODUCT": true
   },
   "rules": {
     "class-methods-use-this": 0,
@@ -33,7 +33,6 @@
     ],
     "consistent-return": 0,
     "no-console": 0,
-    "no-debugger": 0,
-    "prettier/prettier": "error"
+    "no-debugger": 0
   }
 }
