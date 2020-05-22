@@ -33,6 +33,25 @@
     ],
     "consistent-return": 0,
     "no-console": 0,
-    "no-debugger": 0
+    "no-debugger": 0,
+    "spaced-comment": "off",
+    "no-underscore-dangle": "off",
+    "func-names":"off",
+    "prefer-const":"off",
+    "no-bitwise":"off",
+    "no-multi-assign":"off",
+    "no-param-reassign":"off",
+    "prefer-arrow-callback":"off",
+    "camelcase":"off",
+    "no-return-assign":"off",
+    "prefer-template":"off",
+    "no-shadow":"off",
+    "no-restricted-syntax":"off",
+    "lines-around-directive":"off",
+    "guard-for-in":"off",
+    "dot-notation":"off",
+    "strict":"off",
+    "eqeqeq":"off",
+    "object-shorthand":"off"
   }
 }

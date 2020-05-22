@@ -1,5 +1,5 @@
 {
-    "name": "fsexchangerrates-create-cloudfare-apps",
+    "name": "fsexchangerrates-create-cloudfare-app",
     "version": "1.0.0",
     "description": "Cloudflare Apps boilerplate featuring DNS powered by Webpack and Babel",
     "scripts": {
