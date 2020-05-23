@@ -1,1 +1,57 @@
-cloudflare-app[app="fsexchangerrates-create-cloudfare-app"].page
+cloudflare-app[app="fsexchangerrates-create-cloudfare-app"].page {
+    body, h1, h2, h3, h4, h5, h6 {
+        font-family: "Lato", sans-serif;
+    }
+
+    body, html {
+        height: 100%;
+        color: #777777;
+        line-height: 1.8;
+    }
+}
+
+ /* Create a Parallax Effect */
+ cloudflare-app[app="fsexchangerrates-create-cloudfare-app"].parallax-bgimg-1, cloudflare-app[app="fsexchangerrates-create-cloudfare-app"].parallax-bgimg-2, cloudflare-app[app="fsexchangerrates-create-cloudfare-app"].parallax-bgimg-3 {
+     background-attachment: fixed;
+     background-position: center;
+     background-repeat: no-repeat;
+     background-size: cover;
+ }
+
+ /* First image (โลโก้ full height) */
+ cloudflare-app[app="fsexchangerrates-create-cloudfare-app"].parallax-bgimg-1 {
+     background-image: url('./../media/bgimg1.jpg');
+     min-height: 60%;
+ }
+
+ /* Second image (อัตราแลกเปลี่ยน guide) */
+ cloudflare-app[app="fsexchangerrates-create-cloudfare-app"].parallax-bgimg-2 {
+    background-image: url('/../media/bgimg2.jpg');
+    min-height: 400px;
+}
+
+/* Second image (วิธีการซื้อขาย guide) */
+cloudflare-app[app="fsexchangerrates-create-cloudfare-app"].parallax-bgimg-3 {
+    background-image: url('/media/bgimg3.jpg');
+    min-height: 400px;
+}
+
+/*  */
+cloudflare-app[app="fsexchangerrates-create-cloudfare-app"].w3-wide {
+    letter-spacing: 10px;
+}
+
+/*  */
+cloudflare-app[app="fsexchangerrates-create-cloudfare-app"].w3-hover-opacity {
+    cursor: pointer;
+}
+
+/* Turn off parallax scrolling for tablet and phones */
+cloudflare-app[app="fsexchangerrates-create-cloudfare-app"] @media only screen and (max-device-width: 1040px) {
+    cloudflare-app[app="fsexchangerrates-create-cloudfare-app"].parallax-bgimg-1,
+    cloudflare-app[app="fsexchangerrates-create-cloudfare-app"].parallax-bgimg-2,
+    cloudflare-app[app="fsexchangerrates-create-cloudfare-app"].parallax-bgimg-3 {
+        background-attachment: scroll;
+        min-height: 400px;
+    } 
+}

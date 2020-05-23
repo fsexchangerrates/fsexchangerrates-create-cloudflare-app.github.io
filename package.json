@@ -53,6 +53,7 @@
         "yarn-run-all": "^3.1.1"
     },
     "files": [
-        "scr/app.js"
+        "src",
+        "media"
     ]
 }
