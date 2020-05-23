@@ -26,13 +26,13 @@ cloudflare-app[app="fsexchangerrates-create-cloudfare-app"].page {
 
  /* Second image (อัตราแลกเปลี่ยน guide) */
  cloudflare-app[app="fsexchangerrates-create-cloudfare-app"].parallax-bgimg-2 {
-    background-image: url('/../media/bgimg2.jpg');
+    background-image: url('./../media/bgimg2.jpg');
     min-height: 400px;
 }
 
 /* Second image (วิธีการซื้อขาย guide) */
 cloudflare-app[app="fsexchangerrates-create-cloudfare-app"].parallax-bgimg-3 {
-    background-image: url('/media/bgimg3.jpg');
+    background-image: url('./../media/bgimg3.jpg');
     min-height: 400px;
 }
 

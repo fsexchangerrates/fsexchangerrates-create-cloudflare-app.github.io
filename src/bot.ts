@@ -1,6 +1,6 @@
-import * as bottender from 'bottender'
+import * as bottender from 'bottender';
 
-import { Line, LineClient } from 'messaging-api-line'
+import { Line, LineClient } from 'messaging-api-line';
 
 import { 
     Bot,
@@ -9,26 +9,29 @@ import {
     LineContext,
     LineEvent,
     LineTypes
- } from 'bottender'
+ } from 'bottender';
 
-import * as express from 'express'
+import * as express from 'express';
 
-import { config } from './config'
-import { createServer, request, RequestListener, ServerResponse, IncomingMessage } from 'http'
-import requestPromise from 'request-promise'
-import { LineRequestBody } from 'bottender/dist/line/LineConnector'
+import { createServer, request, RequestListener, ServerResponse, IncomingMessage } from 'http';
 
-var http = require('http')
+import requestPromise from 'request-promise';
 
- var router = express();
+import { LineRequestBody } from 'bottender/dist/line/LineConnector';
 
- let port = process.env['port'];
+import { config } from './config';
 
- var server = createServer(router).listen(port || 3000 , () => {
+var http = require('http');
+
+let port = process.env['port'];
+
+var server = express();
+
+server.listen(port || 3000 , () => {
      console.log('listening on port: ', port)
- })
+});
 
- var connector = new bottender.LineConnector({
+var connector = new LineConnector({
     channelSecret: config['channelSecret'],
     accessToken: config['channelAccessToken']
 })
@@ -45,15 +48,18 @@ class Bot extends LineConnector implements Bot
     public event: LineEvent;
     public context: LineContext;
     public options: bottender.LineConnector;
+    public channelSecret: string;
+    public accessToken: string;
     
     /**
      *Creates an instance of Bot.
      * @memberof Bot
      */
-    constructor(options: bottender.LineConnector ) {
-        
+    constructor(
+        options: bottender.LineConnector
+    ) {
         super(options) {
-            this._channelSecret
+            this.channelSecret
         }
     }
 }
