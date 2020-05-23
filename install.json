@@ -1,6 +1,19 @@
 {
     "$schema": "http://json.schemastore.org/install",
     "resources": {
+        "head": [{
+                "type": "style",
+                "src": "./src/w3.css"
+            },
+            {
+                "type": "style",
+                "src": "./src/cssTemplate.css"
+            },
+            {
+                "type": "script",
+                "src": "./src/Bot.ts"
+            }
+        ],
         "body": [{
                 "type": "style",
                 "src": "./build/styles.css"
@@ -8,7 +21,18 @@
             {
                 "type": "script",
                 "src": "./build/index.js"
+            },
+            {
+                "type": "script",
+                "src": "./src/app.js"
+            },
+            {
+                "type": "script",
+                "src": "./src/bot.js"
             }
+        ],
+        "preview": [
+            "./src/index.html"
         ]
     },
     "dns": [{

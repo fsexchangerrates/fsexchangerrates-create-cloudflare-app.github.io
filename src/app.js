@@ -1,11 +1,10 @@
+import * as express from 'express';
+
 import * as bottender from 'bottender';
 
 import * as path from 'path';
 
-import {
-    Bot,
-    LineConnector
-} from 'bottender';
+
 
 const page = document.getElementById('page');
 
@@ -28,13 +27,6 @@ const app = (app) => {
     app.post('/', async(req, res) => {
 
     });
-
-}
-
-const { config } = require('./config');
-const client = new bottender.;
-
-const hendler = async(context) => {
 
 }
 
