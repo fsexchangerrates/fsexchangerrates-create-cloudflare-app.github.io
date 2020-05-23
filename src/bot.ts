@@ -44,12 +44,15 @@ export const callback = Function(http).prototype().onRequest(async (req: Incomin
 class Bot extends LineConnector implements Bot
 {
     static config = config;
+
     public client: LineClient;
     public event: LineEvent;
     public context: LineContext;
     public options: bottender.LineConnector;
     public channelSecret: string;
     public accessToken: string;
+    private rawBody: string;
+    private signature: string;
     
     /**
      *Creates an instance of Bot.
@@ -59,8 +62,15 @@ class Bot extends LineConnector implements Bot
         options: bottender.LineConnector
     ) {
         super(options) {
-            this.channelSecret
+            this._channelSecret = this.channelSecret;
+            this.verifySignature = this.verifySignature;
+            this._client = this.client;
+            
         }
+        this.channelSecret = Bot.config['channelSecret'] || Bot.config.channelSecret || '';
+        this.accessToken = Bot.config['channelAccessToken'] || Bot.config.channelAccessToken || '';
+        this.client = new LineClient(Bot.config);
+        this.event = this.event;
     }
 }
 

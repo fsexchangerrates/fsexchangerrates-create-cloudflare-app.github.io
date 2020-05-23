@@ -1,7 +1,10 @@
+import * as bottender from 'bottender';
+
 import * as path from 'path';
 
 import {
-    Bot
+    Bot,
+    LineConnector
 } from 'bottender';
 
 const page = document.getElementById('page');
@@ -9,6 +12,12 @@ const page = document.getElementById('page');
 Object.defineProperty(exports, "commonJS", { value: true });
 
 const app = (app) => {
+
+    let port = process.env.PORT;
+
+    app.listen(port, () => {
+        console.log(`Server started on port`);
+    });
 
     app.get('/', async function(req, res) {
         req = await req.body.render(page.getElementById('page'), page);
@@ -18,14 +27,12 @@ const app = (app) => {
 
     app.post('/', async(req, res) => {
 
-    })
-
-    let port = process.env.PORT;
-
-    app.listen(port, () => {
-        console.log(`Server started on port`);
     });
+
 }
+
+const { config } = require('./config');
+const client = new bottender.;
 
 const hendler = async(context) => {
 
