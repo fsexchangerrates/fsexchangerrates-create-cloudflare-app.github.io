@@ -1,3 +1,5 @@
+import * as linebot from '@line/bot-sdk';
+
 import * as express from 'express';
 
 import * as bottender from 'bottender';
@@ -18,7 +20,7 @@ import { LineRawEvent } from 'bottender/dist/line/LineEvent';
 
 import { config } from './config';
 
-export class PostbackEvent extends LineEvent
+export class Postback extends LineEvent
 {
     public line: LineConnector;
     public options: any;
@@ -62,7 +64,7 @@ export class Event extends LineEvent
     static RICH_MENU_ID_TWO= 'uuuuuuuuu';
 
     public event: LineEvent ;
-    public postbackEvent: PostbackEvent;
+    public postback: Postback;
 
     public constructor(rawEvent, event: LineEvent) {
         super(rawEvent){
@@ -70,19 +72,19 @@ export class Event extends LineEvent
             this._rawEvent = rawEvent;
         }
         this.event = event;
-        this.postbackEvent = this.postbackEvent;
+        this.postback = new Postback();
     }
 
     async handler(event: Event['event']) {
         let replyToken: string = await event.replyToken;
         let userId: string = await event.source.userId;
-        
+        var link = await new Bot.linkRichMenu();
 
         switch (event) {
-            case this.postbackEvent || 'postback':
+            case this.postback || 'postback':
                 let data: string = event.postback.data;
                 if (data === 'Nextmenu') {
-                    await 
+                    await Bot.l
                 }
         }
 
