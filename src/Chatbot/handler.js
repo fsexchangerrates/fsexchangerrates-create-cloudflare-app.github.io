@@ -22,7 +22,7 @@ async function handler(event) {
                     await client.replyMessage(event.replyToken, message.text);
                     break;
                 default:
-                    throw new console.log('Unsupport message type: ' + `${JSON.stringify(message.type)}`);
+                    throw new console.Error('Unsupport message type: ', `${JSON.stringify(message.type)}`);
             };
             break;
         case 'postback':
@@ -32,7 +32,7 @@ async function handler(event) {
             };
             break;
         default:
-            throw new Error("Unknow event: " + `${JSON.stringify(event.message)}`);
+            throw new Error("Unknow event: ", `${JSON.stringify(event.message)}`);
 
     }
 }

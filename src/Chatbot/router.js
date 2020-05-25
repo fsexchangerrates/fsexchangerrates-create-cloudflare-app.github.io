@@ -10,9 +10,7 @@ const { handler } = require('./handler');
 
 let port = process.env.PORT || 3000;
 
-const router = express.Router('/webhook', () => {
-    return console.log('/webhook', router);
-});
+const router = express.Router('/webhook', () => console.log('/webhook', router));
 
 router.listen(port, () => {
     console.log('listening on port: ', `${port}`);

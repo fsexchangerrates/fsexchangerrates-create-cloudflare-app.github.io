@@ -17,15 +17,7 @@ export namespace app.Chatbot
      */
     export interface Client extends line.Client
     {
-        /**
-         *
-         *
-         * @type {{
-         *             channelAccessToken: string,
-         *             channelSecret: string
-         *         }}
-         * @memberof Client
-         */
+        
         config: {
             channelAccessToken: string,
             channelSecret: string
@@ -78,10 +70,26 @@ export class Event implements app.Chatbot.Event
  *
  *
  * @class Bot
- * @template client
- * @template event
+ *
  */
-class Bot <client, event>
+class Bot
 {
+    public event: Event;
+    public client: line.Client;
+    context: any;
+    public constructor(
+        context: any
+    ) {
+        this.client = new line.Client(config);
+        this.event = this.event;
+        this.context = context;
+    }
 
+    public getPostbackEvent() {
+        var postback = this.event.type[postback];
+        return postback = {
+            type: 'postback',
+            data: getData()
+        };
+    }
 }
