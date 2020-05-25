@@ -4,13 +4,17 @@ import * as bottender from 'bottender';
 
 import * as path from 'path';
 
-import router from './router';
+import { router } from './Chatbot/router';
 
 const page = document.getElementById('page');
 
 Object.defineProperty(exports, "commonJS", { value: true });
 
 const app = express();
+
+app.use('/webhook', path.join(__dirname('Chatbot'), __filename('router.js')));
+
+app.route('/webhook', router);
 
 let port = process.env.PORT;
 

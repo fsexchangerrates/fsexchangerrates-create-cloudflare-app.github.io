@@ -1,25 +1,24 @@
-/* eslint-disable import/prefer-default-export */
-import * as line from '@line/bot-sdk';
-
-import * as express from 'express';
-
 Object.defineProperty(exports, 'commonJS', { value: true });
 
-const middleware = line.middleware();
+const express = require('express');
+
+const line = require('@line/bot-sdk');
 
 const { config } = require('./config');
 
+const { handler } = require('./handler');
+
 let port = process.env.PORT || 3000;
 
-export const router = express.Router();
+const router = express.Router('/webhook', () => {
+    return console.log('/webhook', router);
+});
 
 router.listen(port, () => {
     console.log('listening on port: ', `${port}`);
 })
 
-const { handler } = require('./handler');
-
-router.post('/webhook', middleware(config), (req, res) => {
+router.post('/webhook', line.middleware(config), async(req, res) => {
 
     Promise.all(req.body.events.map(event => {
             console.log('event', event);
@@ -35,3 +34,5 @@ router.post('/webhook', middleware(config), (req, res) => {
 
     return res.statusCode(200).send(req.body).end();
 });
+
+module.exports.router = router;

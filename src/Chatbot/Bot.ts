@@ -2,8 +2,9 @@ import * as line from '@line/bot-sdk';
 
 import * as bottender from 'bottender';
 
-import { config } from '../config';
+import { config } from './config';
 import { Config } from '@line/bot-sdk';
+import { static } from 'express';
 
 export namespace app.Chatbot 
 {
@@ -48,11 +49,6 @@ export namespace app.Chatbot
             postback: line.PostbackEvent
         }>
     }
-
-    export class Bot 
-    {
-
-    }
 }
 
 /**
@@ -70,4 +66,22 @@ export class Event implements app.Chatbot.Event
     }>) {
         this.type = type;
     }
+
+    public handler() {
+        return {
+            type: this.type
+        }
+    }
+}
+
+/**
+ *
+ *
+ * @class Bot
+ * @template client
+ * @template event
+ */
+class Bot <client, event>
+{
+
 }
