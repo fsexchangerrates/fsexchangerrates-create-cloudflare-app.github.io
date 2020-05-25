@@ -14,7 +14,7 @@
         "type": "git",
         "url": "https://github.com/fsexchangerrates/fsexchangerrates-create-cloudflare-app.github.io.git"
     },
-    "author": "Cloudflare Inc.",
+    "author": "Chonthicha Techaai",
     "license": "MIT",
     "bugs": {
         "url": "https://github.com/cloudflare-apps/create-cloudflare-app/issues"
@@ -27,6 +27,8 @@
         "axios": "^0.19.2",
         "bottender": "^1.4.5",
         "express": "^4.17.1",
+        "fs": "0.0.1-security",
+        "http": "0.0.1-security",
         "messaging-api-line": "^0.8.5",
         "ngrok": "^3.2.7",
         "request-promise": "^4.2.5",

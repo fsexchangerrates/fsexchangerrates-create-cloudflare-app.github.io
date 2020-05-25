@@ -4,7 +4,9 @@ import * as bottender from 'bottender';
 
 import * as path from 'path';
 
+import { router } from './router';
 
+const router = express.Router();
 
 const page = document.getElementById('page');
 

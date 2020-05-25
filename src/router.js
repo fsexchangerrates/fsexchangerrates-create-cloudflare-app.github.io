@@ -10,7 +10,7 @@ const { config } = require('./config');
 
 let port = process.env.PORT || 3000;
 
-const router = express.Router();
+const router = express.Router(ServiceWorkerRegistration);
 router.listen(port, () => {
     console.log('listening on port: ', `${port}`);
 })
