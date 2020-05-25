@@ -1,8 +1,9 @@
+/* eslint-disable import/prefer-default-export */
 import * as line from '@line/bot-sdk';
 
 import * as express from 'express';
 
-Object.defineProperty(exports, '_esModules', { value: true });
+Object.defineProperty(exports, 'commonJS', { value: true });
 
 const middleware = line.middleware();
 
@@ -10,7 +11,8 @@ const { config } = require('./config');
 
 let port = process.env.PORT || 3000;
 
-const router = express.Router(ServiceWorkerRegistration);
+export const router = express.Router();
+
 router.listen(port, () => {
     console.log('listening on port: ', `${port}`);
 })
@@ -33,5 +35,3 @@ router.post('/webhook', middleware(config), (req, res) => {
 
     return res.statusCode(200).send(req.body).end();
 });
-
-exports = router;

@@ -3,9 +3,18 @@
     "compilerOptions": {
         "allowJs": true,
         "module": "CommonJS",
-        "target": "ES6"
+        "target": "ES6",
+        "baseUrl": ".",
+        "paths": {
+            "*": [
+                "/Chatbot/"
+            ]
+        }
     },
     "exclude": [
-        ".//node_modules"
+        "./node_modules"
+    ],
+    "include": [
+        "/Chatbot"
     ]
 }
