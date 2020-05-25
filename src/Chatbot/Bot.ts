@@ -55,7 +55,19 @@ export namespace app.Chatbot
     }
 }
 
+/**
+ * @interface {app.Chatbot.Event}
+ */
 export class Event implements app.Chatbot.Event
 {
-
+    type: Array<{
+        message: line.MessageEvent,
+        postback: line.PostbackEvent
+    }>;
+    constructor(type: Array<{
+        message: line.MessageEvent,
+        postback: line.PostbackEvent
+    }>) {
+        this.type = type;
+    }
 }
