@@ -7,9 +7,10 @@ const { config } = require('./config');
 const client = new line.Client(config);
 
 let richMenuId1 = 'kkkkkkkk';
+
 let richMenuId2 = 'hhhhhhhhhh';
 
-
+const { flexMessage } = require('./flexMessage');
 
 async function handler(event) {
     if (event.replyToken && event.replyToken.match(/^(\*)/i)) {
@@ -36,7 +37,7 @@ async function handler(event) {
                 case 'previos':
                     return await client.linkRichMenuToUser(event.source.userId, `${richMenuId1}`);
                 case 'greeting':
-                    return await client.replyMessage(event.replyToken, `${JSON.stringify(greeting)}`);
+                    return await client.replyMessage(event.replyToken, flexMessage.greeting);
                 default:
                     return console.log(`Got postback data ${data}`);
             }

@@ -1,5 +1,3 @@
-Object.defineProperty(exports, 'JavaScript', { value: true });
-
 const greeting = require('./greeting.json');
 
 const paypal = require('./paypal.json');
@@ -27,11 +25,11 @@ function makeFlex(flex) {
         case 'skrill':
             return skrill;
         default:
-            console.log('flex', flex);
+            return console.log(flex);
     }
 }
 
-const flexMessage = {
+module.exports = {
     greeting: makeFlex('greeting'),
     paypal: makeFlex('paypal'),
     webmoney: makeFlex('webmoney'),
@@ -39,5 +37,3 @@ const flexMessage = {
     neteller: makeFlex('neteller'),
     skrill: makeFlex('skrill'),
 };
-
-module.exports.flexMessage = flexMessage;
