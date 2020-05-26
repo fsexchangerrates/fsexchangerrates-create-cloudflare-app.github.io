@@ -7,6 +7,9 @@ const { config } = require('./config');
 const client = new line.Client(config);
 
 let richMenuId1 = 'kkkkkkkk';
+let richMenuId2 = 'hhhhhhhhhh';
+
+
 
 async function handler(event) {
     if (event.replyToken && event.replyToken.match(/^(\*)/i)) {
@@ -27,10 +30,16 @@ async function handler(event) {
             break;
         case 'postback':
             let { data } = event.postback;
-            if (data === 'nextmenu') {
-                return await client.linkRichMenuToUser(event.source.userId, `${richMenuId1}`);
-            };
-            break;
+            switch (data) {
+                case 'nextMenu':
+                    return await client.linkRichMenuToUser(event.source.userId, `${richMenuId2}`);
+                case 'previos':
+                    return await client.linkRichMenuToUser(event.source.userId, `${richMenuId1}`);
+                case 'greeting':
+                    return await client.replyMessage(event.replyToken, `${JSON.stringify(greeting)}`);
+                default:
+                    return console.log(`Got postback data ${data}`);
+            }
         default:
             throw new Error("Unknow event: ", `${JSON.stringify(event.message)}`);
 
