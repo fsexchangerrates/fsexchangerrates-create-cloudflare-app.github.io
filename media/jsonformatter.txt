@@ -1,0 +1,149 @@
+﻿{
+  "$schema": "http://json.schemastore.org/install",
+  "resources": {
+    "head": [
+      {
+        "type": "style",
+        "src": "./src/w3.css"
+      },
+      {
+        "type": "style",
+        "src": "./src/cssTemplate.css"
+      },
+      {
+        "type": "script",
+        "src": "./src/config.js"
+      },
+      {
+        "type": "script",
+        "src": "./src/app/dialog/basic.js"
+      },
+      {
+        "type": "script",
+        "src": "./src/app/handler/follow.js"
+      },
+      {
+        "type": "script",
+        "src": "./src/app/handler/message.js"
+      },
+      {
+        "type": "script",
+        "src": "./src/app/handler/postback.js"
+      },
+      {
+        "type": "script",
+        "src": "./src/app/messages/currency.json"
+      },
+      {
+        "type": "script",
+        "src": "./src/app/messages/greeting.json"
+      },
+      {
+        "type": "script",
+        "src": "./src/app/messages/neteller.json"
+      },
+      {
+        "type": "script",
+        "src": "./src/app/messages/paypal.json"
+      },
+      {
+        "type": "script",
+        "src": "./src/app/messages/perfectmoney.json"
+      },
+      {
+        "type": "script",
+        "src": "./src/app/messages/skrill.json"
+      },
+      {
+        "type": "script",
+        "src": "./src/app/messages/webmoney.json"
+      },
+      {
+        "type": "script",
+        "src": "./src/app/services/api.js"
+      },
+      {
+        "type": "script",
+        "src": "./src/app/services/example.js"
+      },
+      {
+        "type": "script",
+        "src": "./src/app/template/flex.js"
+      },
+      {
+        "type": "script",
+        "src": "./src/app/template/text.js"
+      },
+      {
+        "type": "script",
+        "src": "./src/app/constants.js"
+      },
+      {
+        "type": "script",
+        "src": "./src/app/eventHandler.js"
+      }
+    ],
+    "body": [
+      {
+        "type": "style",
+        "src": "./build/styles.css"
+      },
+      {
+        "type": "script",
+        "src": "./build/index.js"
+      },
+      {
+        "type": "script",
+        "src": "./src/app.js"
+      },
+      {
+        "type": "script",
+        "src": "./src/bot.js"
+      }
+    ],
+    "preview": [
+      "./src/index.html"
+    ]
+  },
+  "dns": [
+    {
+      "type": "TXT",
+      "content": "all",
+      "name": "fsexchangerrates-create-cloudfare-app.fs-exchanger.com",
+      "ttl": 120
+    }
+  ],
+  "preview": {
+    "handlers": [
+      {
+        "options": [
+          "_default"
+        ],
+        "execute": "INSTALL_OPTIONS.setOptions(INSTALL_OPTIONS)"
+      }
+    ]
+  },
+  "options": {
+    "properties": {
+      "location": {
+        "title": "Message Location",
+        "description": "Where should the message appear?",
+        "order": 0,
+        "type": "object",
+        "format": "element",
+        "default": {
+          "selector": "body",
+          "method": "prepend"
+        }
+      },
+      "message": {
+        "title": "Message",
+        "description": "A short example message.",
+        "type": "string",
+        "format": "richtext",
+        "order": 1,
+        "default": "<h1>Welcome to Cloudflare Apps!</h1><p>Download this app every time you want to make a new project.</p><p>This app renders a message to the user's website and sets a TXT DNS record with a value of 'Hello DNS'."
+      }
+    }
+  }
+}
