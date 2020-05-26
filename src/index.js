@@ -1,7 +1,7 @@
 // this import statement tells webpack to include styles.css in the build
-import css from "./styles.css"
-import * as app from './app'
-import * as htmlElement from './index.html';
+import * as css from "./styles.css";
+import * as app from './app';
+import * as HTMLElement from './index.html';
 
 function init() {
     if (!window.addEventListener) return // Check for IE9+

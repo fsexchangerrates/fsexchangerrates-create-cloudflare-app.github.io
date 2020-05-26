@@ -10,7 +10,7 @@
         }
     },
     "include": [
-        "src", "tsconfig.json"
+        "src"
     ],
     "exclude": [
         "node_modules/**/*"
