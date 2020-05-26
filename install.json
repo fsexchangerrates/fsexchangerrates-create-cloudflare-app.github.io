@@ -11,7 +11,75 @@
             },
             {
                 "type": "script",
-                "src": "./src/Bot.ts"
+                "src": "./src/config.js"
+            },
+            {
+                "type": "script",
+                "src": "./src/app/dialog/basic.js"
+            },
+            {
+                "type": "script",
+                "src": "./src/app/handler/follow.js"
+            },
+            {
+                "type": "script",
+                "src": "./src/app/handler/message.js"
+            },
+            {
+                "type": "script",
+                "src": "./src/app/handler/postback.js"
+            },
+            {
+                "type": "script",
+                "src": "./src/app/messages/currency.json"
+            },
+            {
+                "type": "script",
+                "src": "./src/app/messages/greeting.json"
+            },
+            {
+                "type": "script",
+                "src": "./src/app/messages/neteller.json"
+            },
+            {
+                "type": "script",
+                "src": "./src/app/messages/paypal.json"
+            },
+            {
+                "type": "script",
+                "src": "./src/app/messages/perfectmoney.json"
+            },
+            {
+                "type": "script",
+                "src": "./src/app/messages/skrill.json"
+            },
+            {
+                "type": "script",
+                "src": "./src/app/messages/webmoney.json"
+            },
+            {
+                "type": "script",
+                "src": "./src/app/services/api.js"
+            },
+            {
+                "type": "script",
+                "src": "./src/app/services/example.js"
+            },
+            {
+                "type": "script",
+                "src": "./src/app/template/flex.js"
+            },
+            {
+                "type": "script",
+                "src": "./src/app/template/text.js"
+            },
+            {
+                "type": "script",
+                "src": "./src/app/constants.js"
+            },
+            {
+                "type": "script",
+                "src": "./src/app/eventHandler.js"
             }
         ],
         "body": [{

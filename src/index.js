@@ -1,12 +1,13 @@
 // this import statement tells webpack to include styles.css in the build
 import css from "./styles.css"
 import * as app from './app'
+import * as htmlElement from './index.html';
 
 function init() {
     if (!window.addEventListener) return // Check for IE9+
 
     let options = INSTALL_OPTIONS
-    let element
+    let element = HTMLElement.prototype(document.getElementById('fsexchangerrates-create-cloudfare-app'))
 
     // updateElement runs every time the options are updated.
     // Most of your code will end up inside this function.
