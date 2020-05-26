@@ -14,7 +14,7 @@ function init() {
         element = INSTALL.createElement(options.location, element)
 
         // Set the app attribute to your app's dash-delimited alias.
-        element.setAttribute("app", "fsexchangerrates-create-cloudfare-app")
+        element.setAttribute(app, "fsexchangerrates-create-cloudfare-app")
         element.innerHtml = options.message
     }
 

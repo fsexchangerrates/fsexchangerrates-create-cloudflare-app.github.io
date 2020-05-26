@@ -32,7 +32,9 @@
         "messaging-api-line": "^0.8.5",
         "ngrok": "^3.2.7",
         "request-promise": "^4.2.5",
-        "typescript": "^3.9.3"
+        "store2": "^2.11.2",
+        "typescript": "^3.9.3",
+        "util": "^0.12.3"
     },
     "devDependencies": {
         "babel-core": "^6.26.3",

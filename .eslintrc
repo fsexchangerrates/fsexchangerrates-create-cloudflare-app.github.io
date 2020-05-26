@@ -54,6 +54,9 @@
     "eqeqeq":"off",
     "object-shorthand":"off",
     "no-case-declarations": "off",
-    "no-return-await": "off"
+    "no-return-await": "off",
+    "default-case": "off",
+    "prefer-destructuring": "off",
+    "no-else-return": "off"
   }
 }

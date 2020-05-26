@@ -1,26 +1,30 @@
-import * as express from 'express';
-
-import * as bottender from 'bottender';
-
-import * as path from 'path';
-
-import { router } from './Chatbot/router';
-
-const page = document.getElementById('page');
+import * as eventHandler from './app/eventHandler';
 
 Object.defineProperty(exports, "commonJS", { value: true });
 
-const app = express();
+const express = require('express');
 
-app.use('/webhook', path.join(__dirname('Chatbot'), __filename('router.js')));
+const path = require('path');
 
-app.route('/webhook', router);
+const line = require('@line/bot-sdk');
+
+const { config } = require('./config');
+
+const client = new line.Client(config);
+
+const page = document.getElementById('page');
 
 let port = process.env.PORT;
 
+let baseUrl = config.baseURL;
+
+const app = express();
 app.listen(port, () => {
     console.log(`Server started on port`);
 });
+
+app.use('path', path.join(__dirname, 'path'));
+app.use(line);
 
 app.get('/', async function(req, res) {
     req = await req.body.render(page.getElementById('page'), page);
@@ -28,8 +32,22 @@ app.get('/', async function(req, res) {
     return res.send(req);
 });
 
-app.post('/', async(req, res) => {
+app.post('/callback', line.middleware(config), (req, res) => {
+    if (req.body.destination) {
+        console.log('Destination User ID: ' + req.body.destination);
+    }
+    Promise.all(
+        req.body.events.map(event => {
+            console.log('event', event);
+            return eventHandler(client, event, baseUrl);
+        }).then((result) => {
+            res.json(result).status(500).end();
+        }).catch((error) => {
+            throw new console.Error('error', error);
+        })
+    );
 
+    res.status(200).send(req.body).end();
 });
 
 
