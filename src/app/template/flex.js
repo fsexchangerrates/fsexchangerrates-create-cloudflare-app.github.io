@@ -1,4 +1,6 @@
-const greeting = require('../messages/greeting.json');
+Object.defineProperty(exports, 'commonJS', { value: true });
+
+const greeting = require('./../messages/greeting.json')
 
 const currency = require('../messages/currency.json');
 
@@ -15,7 +17,7 @@ const skrill = require('../messages/skrill.json');
 function getMessages(message) {
     switch (message) {
         case 'greeting':
-            return greeting;
+            return message = greeting;
         case 'currency':
             return currency;
         case 'paypal':

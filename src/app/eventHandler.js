@@ -4,7 +4,7 @@ const followHandler = require('./handler/follow');
 
 const postbackHandler = require('./handler/postback');
 
-module.exports = (client, event, baseURL) => {
+exports = function eventHandler(client, event, baseURL) {
     console.log(event)
     switch (event.type) {
         case 'message':
